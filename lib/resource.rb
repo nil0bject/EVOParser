@@ -9,11 +9,11 @@ class Resource < BinData::Record
 
   def self.classes
     {
-      'dëqt' => ::Deqt,
-      'dësc' => ::Desc,
-      'düde' => ::Dude,
-      'flët' => ::Flet,
-      'gövt' => ::Govt,
+      'dëqt' => ::Deqt::Resource,
+      'dësc' => ::Desc::Resource,
+      'düde' => ::Dude::Resource,
+      'flët' => ::Flet::Resource,
+      'gövt' => ::Govt::Resource,
       'jünk' => ::Junk,
       'mïsn' => ::Misn,
       'nëbu' => ::Nebu,
