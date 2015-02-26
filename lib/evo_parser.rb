@@ -1,24 +1,23 @@
+require 'bindata'
 require 'roar'
 require 'roar/json'
 require 'roar/json/json_api'
 require 'roar/decorator'
 
+def resources_path
+  '/Users/tycho/Documents/Developer/Escape Velocity/resources'
+end
+
+def ignore_file?(file_name)
+  ignored = (file_name[0] == '.' || file_name == 'meta.json')
+  Dir.chdir('..') if ignored
+  ignored
+end
+
 module EVOParser
-  def resources_path
-    '/Users/tycho/Documents/Developer/Escape Velocity/resources'
-  end
-
-
-  def ignore_file?(file_name)
-    ignored = (file_name[0] == '.' || file_name == 'meta.json')
-    Dir.chdir('..') if ignored
-    ignored
-  end
-
-  Dir.chdir('..')
-  require 'bindata'
-  Dir.foreach('lib/evo_parser') do |library|
-    Dir.chdir('lib/evo_parser')
+  # Dir.chdir('..')
+  Dir.foreach('./lib/evo_parser') do |library|
+    Dir.chdir('./lib/evo_parser')
     next if ignore_file?(library)
     require_relative "../lib/evo_parser/#{library}"
     Dir.chdir('../..')

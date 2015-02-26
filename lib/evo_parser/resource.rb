@@ -1,6 +1,8 @@
 class Resource < BinData::Record
   endian :big
 
+  property :id
+
   def self.get_class(resource_type)
     self.classes[resource_type]
   end
