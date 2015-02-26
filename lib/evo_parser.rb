@@ -15,25 +15,18 @@ def ignore_file?(file_name)
 end
 
 module EVOParser
-  # Dir.chdir('..')
-  Dir.foreach('./lib/evo_parser') do |library|
-    Dir.chdir('./lib/evo_parser')
+  Dir.chdir('lib')
+  Dir.foreach('evo_parser') do |library|
+    Dir.chdir('evo_parser')
     next if ignore_file?(library)
     require_relative "../lib/evo_parser/#{library}"
-    Dir.chdir('../..')
+    Dir.chdir('..')
   end
-
+  Dir.chdir('..')
   Dir.foreach('records') do |record|
     Dir.chdir('records')
     next if ignore_file?(record)
     require_relative "../records/#{record}" unless File.directory?(record)
-    Dir.chdir('..')
-  end
-# puts Dir.glob("*")
-  Dir.foreach('resources') do |resource|
-    Dir.chdir('resources')
-    next if ignore_file?(resource)
-    require_relative "../resources/#{resource}" unless File.directory?(resource)
     Dir.chdir('..')
   end
 # puts Dir.glob('*')
