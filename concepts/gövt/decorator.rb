@@ -1,7 +1,6 @@
 module Govt
-  class Decorator < Roar::Decorator
-    include Roar::JSON::JSONAPI
-    type :gövts
+  class Decorator < Decorator
+    type :gövt
 
     # property :id
     property :inherent_jam

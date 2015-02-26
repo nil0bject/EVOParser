@@ -1,7 +1,6 @@
 module Flet
-  class Decorator < Roar::Decorator
-    include Roar::JSON::JSONAPI
-    type :flëts
+  class Decorator < Decorator
+    type :flët
 
     property :lead_ship_type
     property :escort_type

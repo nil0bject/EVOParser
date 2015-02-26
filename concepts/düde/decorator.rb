@@ -1,7 +1,7 @@
 module Dude
   class Decorator < Roar::Decorator
     include Roar::JSON::JSONAPI
-    type :düdes
+    type :düde
 
     # property :id
     property :ai_type

@@ -1,7 +1,6 @@
 module Deqt
-  class Decorator < ::Roar::Decorator
-    include ::Roar::JSON::JSONAPI
-    type :deqts
+  class Decorator < Decorator
+    type :dëqt
 
     property :id
     property :string

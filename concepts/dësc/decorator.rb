@@ -1,7 +1,6 @@
 module Desc
-  class Decorator < Roar::Decorator
-    include Roar::JSON::JSONAPI
-    type :descs
+  class Decorator < Decorator
+    type :dësc
 
     # property :id
     property :string
