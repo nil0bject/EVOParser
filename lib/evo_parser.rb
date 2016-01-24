@@ -15,6 +15,8 @@ def ignore_file?(file_name)
 end
 
 module EVOParser
+  require_relative "../app/app.rb"
+  # Dir.chdir('..')
   Dir.chdir('lib')
   Dir.foreach('evo_parser') do |library|
     Dir.chdir('evo_parser')
@@ -29,7 +31,7 @@ module EVOParser
     require_relative "../records/#{record}" unless File.directory?(record)
     Dir.chdir('..')
   end
-# puts Dir.glob('*')
+puts Dir.glob('*')
   Dir.foreach('concepts') do |concept|
     Dir.chdir('concepts')
     next if ignore_file?(concept)
