@@ -1,3 +1,5 @@
+require 'json'
+
 class Resource < BinData::Record
   endian :big
 
@@ -9,23 +11,23 @@ class Resource < BinData::Record
 
   def self.classes
     {
-      'dëqt' => ::Deqt::Resource,
-      'dësc' => ::Desc::Resource,
-      'düde' => ::Dude::Resource,
-      'flët' => ::Flet::Resource,
-      'gövt' => ::Govt::Resource,
-      'jünk' => ::Junk::Resource,
-      'mïsn' => ::Misn::Resource,
-      'nëbu' => ::Nebu::Resource,
-      'oütf' => ::Outf::Resource,
-      'öops' => ::Oops::Resource,
-      'përs' => ::Pers::Resource,
-      'shïp' => ::Ship::Resource,
-      'spïn' => ::Spin::Resource,
-      'spöb' => ::Spob::Resource,
-      'sÿst' => ::Syst::Resource,
-      'wëap' => ::Weap::Resource,
-      'yëä®' => ::Year::Resource
+      'dëqt' => ::Deqt::Record,
+      'dësc' => ::Desc::Record,
+      'düde' => ::Dude::Record,
+      'flët' => ::Flet::Record,
+      'gövt' => ::Govt::Record,
+      'jünk' => ::Junk::Record,
+      'mïsn' => ::Misn::Record,
+      'nëbu' => ::Nebu::Record,
+      'oütf' => ::Outf::Record,
+      'öops' => ::Oops::Record,
+      'përs' => ::Pers::Record,
+      'shïp' => ::Ship::Record,
+      'spïn' => ::Spin::Record,
+      'spöb' => ::Spob::Record,
+      'sÿst' => ::Syst::Record,
+      'wëap' => ::Weap::Record,
+      'yëä®' => ::Year::Record
     }
   end
 
