@@ -10,38 +10,31 @@ module Dude
     int16 :government_id
     int16 :booty
 
-    def self.model_type
-      'düde'
-    end
-
     def government
-      unless government_id == -1
-        io = File.open("/Users/tycho/Documents/Developer/Escape Velocity/resources/Override Data 1/resourceFork/gövt/#{government_id}/data.gövt")
-        Resource.get_class('gövt').read(io)
-      end
+      puts ::Record.get_class('govt')
+      ::Record.get_class('govt').find(government_id)
     end
 
     def ship_types
       ship_records = []
       self.ship_type_ids.each do |ship_id|
-        io = File.open("/Users/tycho/Documents/Developer/Escape Velocity/resources/Override Data 2/resourceFork/shïp/#{ship_id}/data.shïp")
-        ship_records << Resource.get_class('shïp').read(io)
+        ship_records << Resource.get_class('ship').find(ship_id)
       end
       ship_records
     end
 
     def self.find(id)
-      io = File.open("/Users/tycho/Documents/Developer/Escape Velocity/resources/Override Data 1/resourceFork/#{self.model_type}/#{id}/data.#{self.model_type}")
-      resource = Resource.get_class(self.model_type).read(io)
+      io = File.open("/Users/tycho/Documents/Developer/Escape Velocity/resources/Override Data 1/resourceFork/#{Resource.get_type('dude')}/#{id}/data.#{Resource.get_type('dude')}")
+      resource = Resource.get_class('dude').read(io)
       resource
     end
 
     def self.all
       resources = []
-      resource_paths = Dir.glob("/Users/tycho/Documents/Developer/Escape Velocity/resources/Override Data 1/resourceFork/#{self.model_type}/*")
+      resource_paths = Dir.glob("/Users/tycho/Documents/Developer/Escape Velocity/resources/Override Data 1/resourceFork/#{Resource.get_type('dude')}/*")
       resource_paths.each do |resource_path|
-        io = File.open("#{resource_path}/data.#{self.model_type}")
-        resource = Resource.get_class(self.model_type).read(io)
+        io = File.open("#{resource_path}/data.#{Resource.get_type('dude')}")
+        resource = Resource.get_class('dude').read(io)
         resources << resource
       end
       resources

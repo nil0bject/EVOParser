@@ -30,24 +30,23 @@ module Ship
     uint16 :skill_var
 
     def self.model_type
-      'shïp'
+      'ship'
     end
 
     def self.find(id)
-      io = File.open("/Users/tycho/Documents/Developer/Escape Velocity/resources/Override Data 2/resourceFork/#{self.model_type}/#{id}/data.#{self.model_type}")
+      io = File.open("/Users/tycho/Documents/Developer/Escape Velocity/resources/Override Data 2/resourceFork/#{Resource.get_type('ship')}/#{id}/data.#{Resource.get_type('ship')}")
       resource = Resource.get_class(self.model_type)
-      resource.io = io
       resource.read(io)
     end
 
     def self.all
       resources = []
-      resource_paths = Dir.glob("/Users/tycho/Documents/Developer/Escape Velocity/resources/Override Data 2/resourceFork/#{self.model_type}/*")
+      resource_paths = Dir.glob("/Users/tycho/Documents/Developer/Escape Velocity/resources/Override Data 2/resourceFork/#{Resource.get_type('ship')}/*")
       resource_paths.each do |resource_path|
-        io = File.open("#{resource_path}/data.#{self.model_type}")
+        io = File.open("#{resource_path}/data.#{Resource.get_type('ship')}")
         meta = JSON.parse(File.read("#{resource_path}/meta.json"))
         resource = Resource.get_class(self.model_type)
-        resource.meta = meta
+        #resource.meta = meta
         resources << resource.read(io)
       end
       resources

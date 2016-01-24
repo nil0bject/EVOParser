@@ -1,14 +1,12 @@
-require 'json'
+class Record
+  attr_accessor :meta, :resource
 
-class Resource < BinData::Record
-  endian :big
-
-  def self.get_class(resource_name)
-    self.classes[resource_name][:class]
+  def self.get_class(record_name)
+    self.classes[record_name][:class]
   end
 
-  def self.get_type(resource_name)
-    self.classes[resource_name][:type]
+  def self.get_type(record_name)
+    self.classes[record_name][:type]
   end
 
   private
@@ -19,7 +17,7 @@ class Resource < BinData::Record
       'desc' => { class: ::Desc::Record, type: 'dësc' },
       'dude' => { class: ::Dude::Record, type: 'düde' },
       'flet' => { class: ::Flet::Record, type: 'flët' },
-      'govt' => { class: ::Govt::Resource, type: 'gövt' },
+      'govt' => { class: ::Govt::Record, type: 'gövt' },
       'junk' => { class: ::Junk::Record, type: 'jünk' },
       'misn' => { class: ::Misn::Record, type: 'mïsn' },
       'nebu' => { class: ::Nebu::Record, type: 'nëbu' },

@@ -1,15 +1,24 @@
 module Govt
-  class Record < Resource
-    int16 :inherent_jam
-    int16 :flags
-    int16 :ally
-    int16 :enemy
-    int16 :crime_tol
-    int16 :smug_penalty
-    int16 :disab_penalty
-    int16 :board_penalty
-    int16 :kill_penalty
-    int16 :shoot_penalty
-    int16 :initial_rec
+  class Record < Record
+
+    def self.find(id)
+      unless id == -1
+        io = File.open("/Users/tycho/Documents/Developer/Escape Velocity/resources/Override Data 1/resourceFork/#{Resource.get_type('govt')}/#{id}/data.#{Resource.get_type('govt')}")
+        resource = Resource.get_class('govt').read(io)
+        resource
+      end
+    end
+
+    def self.all
+      resources = []
+      resource_paths = Dir.glob("/Users/tycho/Documents/Developer/Escape Velocity/resources/Override Data 1/resourceFork/#{Resource.get_type('govt')}/*")
+      resource_paths.each do |resource_path|
+        io = File.open("#{resource_path}/data.#{Resource.get_type('govt')}")
+        resource = Resource.get_class('govt').read(io)
+        resources << resource
+      end
+      resources
+    end
+
   end
 end
