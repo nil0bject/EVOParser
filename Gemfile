@@ -4,3 +4,5 @@ source 'https://rubygems.org'
 gem 'bindata'
 #representers
 gem 'roar'
+#service
+gem 'padrino'
