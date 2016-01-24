@@ -1,5 +1,5 @@
 module Spin
-  class Resource < Resource
+  class Record < Resource
     int16 :sprites_id
     int16 :masks_id
     x_and_y :dimensions

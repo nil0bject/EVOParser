@@ -1,5 +1,5 @@
 module Outf
-  class Resource < Resource
+  class Record < Resource
     uint16 :mission_bit
     uint16 :mass
     uint16 :tech_level

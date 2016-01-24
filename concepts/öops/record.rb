@@ -1,5 +1,5 @@
 module Oops
-  class Resource < Resource
+  class Record < Resource
     uint16 :stellar
     uint16 :commodity
     uint16 :price_delta

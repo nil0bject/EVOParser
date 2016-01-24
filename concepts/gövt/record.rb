@@ -1,5 +1,5 @@
 module Govt
-  class Resource < Resource
+  class Record < Resource
     int16 :inherent_jam
     int16 :flags
     int16 :ally

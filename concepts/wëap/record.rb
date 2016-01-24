@@ -1,5 +1,5 @@
 module Weap
-  class Resource < Resource
+  class Record < Resource
     uint16 :reload
     uint16 :life_count
     uint16 :mass_dmg

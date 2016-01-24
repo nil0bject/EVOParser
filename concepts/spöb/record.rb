@@ -1,5 +1,5 @@
 module Spob
-  class Resource < Resource
+  class Record < Resource
     x_and_y :pos
     uint16 :type
     uint16 :flags

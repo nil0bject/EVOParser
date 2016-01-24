@@ -1,5 +1,5 @@
 module Pers
-  class Resource < Resource
+  class Record < Resource
     uint16 :link_syst
     uint16 :govt
     uint16 :ai_type

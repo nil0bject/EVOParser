@@ -1,5 +1,5 @@
 module Desc
-  class Resource < Resource
+  class Record < Resource
     stringz :string
   end
 end

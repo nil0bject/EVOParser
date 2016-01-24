@@ -5,15 +5,14 @@ module Dude
 
     # property :id
     property :ai_type
-    property :ship_types
+    property :ship_type_ids
     property :ship_type_probabilities
-    # property :government
-    # has_one :government
+    property :government_id
+    property :booty
     compound do
       property :government
+      property :ship_types
     end
-    # collection :government, extend: ::Govt::Decorator, class: ::Govt::Resource
-
-    property :booty
+    # collection :ship_types, extend: Ship::Decorator
   end
 end

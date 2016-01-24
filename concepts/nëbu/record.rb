@@ -1,5 +1,5 @@
 module Nebu
-  class Resource < Resource
+  class Record < Resource
     x_and_y :pos
     x_and_y :dimensions
   end

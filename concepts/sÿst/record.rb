@@ -1,5 +1,5 @@
 module Syst
-  class Resource < Resource
+  class Record < Resource
     x_and_y :pos
     array :con, :type => :uint16, :initial_length => 5
     array :nav_def, :type => :uint16, :initial_length => 4

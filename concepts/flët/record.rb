@@ -1,5 +1,5 @@
 module Flet
-  class Resource < Resource
+  class Record < Resource
     int16 :lead_ship_type
     array :escort_type, :initial_length => 4 do
       int16

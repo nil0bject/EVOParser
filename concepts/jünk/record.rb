@@ -1,5 +1,5 @@
 module Junk
-  class Resource < Resource
+  class Record < Resource
     int16 :sold_at
     int16 :bought_at
     int16 :base_price
