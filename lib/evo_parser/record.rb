@@ -1,6 +1,19 @@
 class Record
   attr_accessor :meta, :resource
 
+  def initialize(meta:, resource:)
+    @meta = meta
+    @resource = resource
+  end
+
+  def id
+    self.meta['id']
+  end
+
+  def name
+    self.meta['name']
+  end
+
   def self.get_class(record_name)
     self.classes[record_name][:class]
   end

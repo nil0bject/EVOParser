@@ -2,7 +2,8 @@ module Govt
   class Decorator < Decorator
     type :gövt
 
-    # property :id
+    property :id
+    property :name
     property :inherent_jam
     property :flags
     property :ally

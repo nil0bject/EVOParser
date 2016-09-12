@@ -4,5 +4,6 @@ source 'https://rubygems.org'
 gem 'bindata'
 #representers
 gem 'roar'
+gem 'multi_json'
 #service
 gem 'padrino'

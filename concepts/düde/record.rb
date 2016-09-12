@@ -11,7 +11,6 @@ module Dude
     int16 :booty
 
     def government
-      puts ::Record.get_class('govt')
       ::Record.get_class('govt').find(government_id)
     end
 

@@ -1,5 +1,8 @@
 module Govt
   class Resource < Resource
+    virtual :id
+    virtual :name
+    
     int16 :inherent_jam
     int16 :flags
     int16 :ally
